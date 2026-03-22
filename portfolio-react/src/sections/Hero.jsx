@@ -76,7 +76,7 @@ export default function Hero() {
       {/* 3D Lamborghini Model floating on the right */}
       <div className={styles.modelContainer}>
         <ModelViewer
-          url="/lambo.glb"
+          url="./lambo.glb"
           width="100%"
           height="100%"
           defaultRotationX={180} /* X controls seeing left vs right vs front of car natively */
