@@ -12,14 +12,6 @@ const experience = [
       'Worked AI-first, using AI-assisted tools daily to ship faster in a high-frequency deployment team.',
     ],
   },
-  {
-    company: "McDonald's",
-    role: 'Crew Member',
-    date: 'Aug 2024 – Sep 2025',
-    bullets: [
-      'Fast-paced customer service and team collaboration in a high-volume environment.',
-    ],
-  },
 ]
 
 const education = [

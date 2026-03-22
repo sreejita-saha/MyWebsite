@@ -35,7 +35,7 @@ export default function App() {
         /> */}
       </div>
       {/* <SplashCursor /> */}
-      <GradualBlur />
+      {/* <GradualBlur /> */}
       <Nav />
       <main>
         <Hero />

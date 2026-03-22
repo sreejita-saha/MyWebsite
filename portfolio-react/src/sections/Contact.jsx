@@ -20,7 +20,7 @@ export default function Contact() {
         >
           <span className={styles.label}>Contact</span>
           <h2 className={styles.heading}>
-            Let's work<br /><em>together.</em>
+            Let's learn<br /><em>together.</em>
           </h2>
         </motion.div>
 
@@ -49,17 +49,22 @@ export default function Contact() {
           ))}
         </motion.div>
 
+
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          className={styles.credits}
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <StarBorder color="var(--accent)">
-            <a href="mailto:sreejita_saha@outlook.com" className={styles.ctaBtn}>
-              Say hello ↗
-            </a>
-          </StarBorder>
+          <footer className={styles.footer}></footer>
+          <p>
+            Built by Sreejita with <strong>Antigravity</strong> & <strong>Claude</strong>.<br/>
+            UI interactions via <strong>ReactBits</strong>.
+          </p>
+          <p className={styles.lamboCredit}>
+            <strong>Lambo Model:</strong> <a href="https://skfb.ly/oGR6N" target="_blank" rel="noreferrer">"Wallpaper 7680x2160 - Lamborghini Aventador SVJ"</a> by SDC PERFORMANCE™️ is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">Creative Commons Attribution</a>.
+          </p>
         </motion.div>
       </div>
 

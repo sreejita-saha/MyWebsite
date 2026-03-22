@@ -5,15 +5,12 @@
   right: 0;
   bottom: 0;
   background: var(--bg);
-  /* Natively maps to your exact dark theme color */
   z-index: 99999;
-  /* Absolute top priority overlay */
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--text);
   font-family: var(--font-mono);
-  /* Terminal aesthetic */
 }
 
 .loaderContent {
@@ -36,8 +33,7 @@
 .percentSymbol {
   font-size: 24px;
   font-weight: 500;
-  color: var(--accent);
-  /* Adds a pop of neon to the percentage sign */
+  color: blue;
   margin-left: 2px;
 }
 
@@ -52,7 +48,7 @@
 
 .progressFill {
   height: 100%;
-  background: var(--accent);
+  background: blue;
   box-shadow: 0 0 15px blue;
 }
 
