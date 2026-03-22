@@ -55,31 +55,18 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <GlassSurface 
-              width= "400px"
-              height="350px"
-              displace={0}
-              distortionScale={90}
-              redOffset={-20}
-              greenOffset={10}
-              blueOffset={46}
-              brightness={51}
-              opacity={0.93}
-              mixBlendMode="screen"
-            >
-              <div style={{ padding: '32px' }}>
-                {Object.entries(skills).map(([group, items]) => (
-                  <div key={group} className={styles.skillGroup}>
-                    <span className={styles.groupName}>{group}</span>
-                    <div className={styles.tags}>
-                      {items.map(s => (
-                        <span key={s} className={styles.tag}>{s}</span>
-                      ))}
-                    </div>
+            <div className={styles.skillsCard}>
+              {Object.entries(skills).map(([group, items]) => (
+                <div key={group} className={styles.skillGroup}>
+                  <span className={styles.groupName}>{group}</span>
+                  <div className={styles.tags}>
+                    {items.map(s => (
+                      <span key={s} className={styles.tag}>{s}</span>
+                    ))}
                   </div>
-                ))}
-              </div>
-            </GlassSurface>
+                </div>
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

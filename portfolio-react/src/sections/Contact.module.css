@@ -74,7 +74,7 @@
 }
 
 .link:hover {
-  color: cyan;
+  color: darkslategray;
   cursor: url('/pointer.png'), pointer;
 }
 
@@ -88,7 +88,7 @@
   justify-content: center;
   font-family: var(--font-mono);
   font-size: 11px;
-  color: cyan;
+  color: darkslategray;
   flex-shrink: 0;
   background: var(--surface);
 }

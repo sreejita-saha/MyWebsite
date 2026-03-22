@@ -4,6 +4,7 @@ import Hero from './sections/Hero.jsx'
 import Projects from './sections/Projects.jsx'
 import Experience from './sections/Experience.jsx'
 import About from './sections/About.jsx'
+import Achievements from './sections/Achievements.jsx'
 import MiniGame from './sections/MiniGame.jsx'
 import Contact from './sections/Contact.jsx'
 import Nav from './components/Nav.jsx'
@@ -42,7 +43,8 @@ export default function App() {
         <About />
         <Projects />
         <Experience />
-        <MiniGame />
+        <Achievements />
+        {/* <MiniGame /> */}
         <Contact />
       </main>
     </div>
