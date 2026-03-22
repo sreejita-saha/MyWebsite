@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
 import Hero from './sections/Hero.jsx'
 import Projects from './sections/Projects.jsx'
 import Experience from './sections/Experience.jsx'
@@ -7,11 +9,23 @@ import Nav from './components/Nav.jsx'
 import SplashCursor from './components/SplashCursor.jsx'
 import SoftAurora from './components/SoftAurora.jsx'
 import GradualBlur from './components/GradualBlur.jsx'
+import LoadingScreen from './components/LoadingScreen.jsx'
 import styles from './App.module.css'
 
 export default function App() {
+  const [appLoading, setAppLoading] = useState(true)
+
   return (
     <div className={styles.app}>
+      <AnimatePresence>
+        {appLoading && (
+          <LoadingScreen 
+            key="loadingScreen" 
+            onComplete={() => setAppLoading(false)} 
+          />
+        )}
+      </AnimatePresence>
+
       <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', zIndex: -1 }}>
         {/* <SoftAurora 
           color1="#4c1d95" 

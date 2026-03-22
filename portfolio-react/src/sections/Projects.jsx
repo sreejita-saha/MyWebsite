@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import GlassSurface from '../components/GlassSurface.jsx'
 import styles from './Projects.module.css'
 
 const projects = [
@@ -45,12 +44,7 @@ const projects = [
 function ProjectCard({ id, tag, title, desc, langs, badge, featured }) {
   return (
     <div className={styles.glowWrapper}>
-      <GlassSurface
-        width="100%"
-        height="100%"
-        borderRadius={16}
-        className={`${styles.card} ${featured ? styles.featured : ''}`}
-      >
+      <div className={`${styles.card} ${featured ? styles.featured : ''}`}>
         <div className={styles.cardTop}>
           <span className={styles.cardId}>{id}</span>
           {badge && <span className={styles.badge}>{badge}</span>}
@@ -69,7 +63,7 @@ function ProjectCard({ id, tag, title, desc, langs, badge, featured }) {
         <div className={styles.langs}>
           {langs.map(l => <span key={l} className={styles.lang}>{l}</span>)}
         </div>
-      </GlassSurface>
+      </div>
     </div>
   )
 }
