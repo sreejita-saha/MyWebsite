@@ -1,0 +1,144 @@
+.section {
+  padding: 100px 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.about {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 12px 80px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("ocean3.gif");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+
+  z-index: -1;
+  pointer-events: none;
+
+  /* Adds a premium fade at the top and bottom so it blends seamlessly without hard cutoffs */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.about::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background: rgba(1, 12, 63, 0.2);
+  z-index: -1;
+}
+
+.inner {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 56px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 40px 20px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.textCol p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.textCol p:last-child {
+  margin-bottom: 0;
+}
+
+.skillsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.groupName {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  
+}
+
+.tag {
+  font-size: 15px;
+  color: rgb(181, 187, 255);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 11px;
+  background: var(--surface);
+  transition: border-color 0.15s, color 0.15s;
+  cursor: url('/pointer.png'), pointer;
+}
+
+.tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}

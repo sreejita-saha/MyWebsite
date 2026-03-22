@@ -1,0 +1,251 @@
+.section {
+  padding: 40px 48px 20px 48px;
+  border-bottom: 1px solid var(--border);
+  min-height: 100vh;
+  display: flex;
+}
+
+/* We want layout to stretch big to fit massive details now */
+.inner {
+  max-width: 1600px;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.projectShowcase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  flex-grow: 1;
+  min-height: 65vh;
+}
+
+.cardAnimationWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: slideFadeIn 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes slideFadeIn {
+  0% { opacity: 0; transform: scale(0.97) translateY(15px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.sideArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(12, 12, 14, 0.6);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.sideArrow:hover {
+  background: var(--text);
+  color: #0c0c0e;
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.6);
+}
+
+.cardContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 65vh; /* Lock vertical height identically so text sizes never warp layout */
+}
+
+.detailsArea {
+  margin-bottom: 24px;
+  flex-grow: 1; /* Pushes the 'langs' completely to the bottom of the card dynamically */
+  min-height: 150px;
+  /* guarantees minimum footprint for massive content additions later */
+}
+
+.glowWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Force child Glass components to stretch */
+  display: flex;
+  flex-direction: column;
+  padding: 1px;
+  border-radius: 17px;
+  background: linear-gradient(20deg, #ff007f, #a78bfa, #00f0ff, #f472b6, #ff007f);
+  background-size: 400% 400%;
+  animation: glowAnimation 10s ease infinite;
+}
+
+/* Background halo bleed effect */
+.glowWrapper::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 5px;
+  background: linear-gradient(45deg, #ff007f, #a78bfa, #00f0ff, #f472b6, #ff007f);
+  background-size: 400% 400%;
+  animation: glowAnimation 10s ease infinite;
+  filter: blur(30px);
+  z-index: -1;
+  opacity: 0.4;
+}
+
+@keyframes glowAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.counterTracker {
+  margin-top: 30px;
+  background: rgba(12, 12, 14, 0.5);
+  border: 1px solid var(--border-mid);
+  padding: 8px 18px;
+  border-radius: 24px;
+  backdrop-filter: blur(8px);
+}
+
+.counterText {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .projectShowcase {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .sideArrow {
+    transform: rotate(90deg);
+  }
+
+  .sideArrow:hover {
+    transform: rotate(90deg) scale(1.1);
+  }
+}
+
+/* Card styles — GlassSurface will overlay its own glass effect on top */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  height: 100%;
+  transition: border-color 0.2s;
+}
+
+.card:hover {
+  border-color: var(--border-mid);
+}
+
+.featured {
+  padding: 36px;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cardId {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--border-mid);
+  letter-spacing: 0.05em;
+}
+
+.badge {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(167, 139, 250, 0.3);
+  border-radius: 4px;
+  padding: 3px 9px;
+}
+
+.cardTag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.featured .cardTitle {
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+
+.langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.lang {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  border: 1px solid var(--border-mid);
+  color: var(--text-muted);
+  background: var(--surface2);
+}
