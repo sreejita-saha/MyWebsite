@@ -26,7 +26,7 @@ export default function Hero() {
           transition={{ delay: 0.3, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <span className={styles.name}>Sreejita</span>
-          <span className={styles.sub}><em>Software</em> Engineer Student</span>
+          <span className={styles.sub}><em>Software</em> Engineering Student</span>
         </motion.h1>
 
         <motion.p
