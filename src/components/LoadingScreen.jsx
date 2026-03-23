@@ -58,7 +58,7 @@ export default function LoadingScreen({ onComplete }) {
           animate={{ rotate: 360, y: [0, -20, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
         >
-          🙈
+          <img src="/noob.png" alt="noob" />
         </motion.div>
         
         <div className={styles.progressText}>
