@@ -83,7 +83,7 @@
   background: rgba(12, 12, 14, 0.6);
   backdrop-filter: blur(10px);
   color: var(--text);
-  cursor: pointer;
+  cursor: url('/pointer.png'), pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }

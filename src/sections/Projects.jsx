@@ -56,7 +56,6 @@ function ProjectCard({ id, tag, title, desc, langs, badge, featured }) {
         <div className={styles.detailsArea}>
           <p className={styles.cardDesc}>{desc}</p>
           <p className={styles.cardDesc}>
-            [Placeholder: Additional colorful expansive details, screenshots, metrics, and bulletpoints about the architecture of <strong>{title}</strong> will be natively inserted here seamlessly.]
           </p>
         </div>
         

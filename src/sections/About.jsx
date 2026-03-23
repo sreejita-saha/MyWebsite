@@ -33,17 +33,16 @@ export default function About() {
           >
             <p>
               I'm a second-year software engineering student at UL, based in Ireland.
-              I got into programming by taking things apart to understand them — and
-              ended up loving the craft of building them back, better.
+              I got into programming through games and I always enjoyed logical thinking and problem solving.
             </p>
             <p>
               My internship at Cloudcards taught me what it means to own something in
               production. Making real technical decisions, shipping code real people use,
-              and dealing with the chaos that comes with it — I want more of that.
+              and dealing with the chaos that comes with it.
             </p>
             <p>
               Outside code I'm into UI design, game dev (Roblox Studio, Lua scripting),
-              and competed in the Chemistry Olympiad — which trained me to not give up
+              and competed in the Chemistry Olympiad which trained me to not give up
               on hard problems.
             </p>
           </motion.div>
