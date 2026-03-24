@@ -1,4 +1,6 @@
 .section {
+  position: relative;
+  overflow: hidden;
   padding: 100px 48px;
   background: var(--bg);
   border-bottom: 1px solid var(--border);
@@ -7,6 +9,20 @@
 .inner {
   max-width: 860px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.flowerBg {
+  position: absolute;
+  inset: 0;
+  background-image: url("/flower.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: 0;
+  filter: hue-rotate(280deg);
 }
 
 .header {
@@ -27,7 +43,7 @@
 .heading {
   font-family: var(--font-serif);
   font-size: clamp(32px, 5vw, 52px);
-  color: var(--text);
+  color: rgba(169, 114, 179, 0.5);
   font-style: italic;
   font-weight: 400;
   margin-bottom: 15px;
@@ -42,20 +58,22 @@
   margin: 0;
 }
 
-.list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
+.card {
   background: var(--surface);
-  padding: 30px;
-  border-radius: 16px;
   border: 1px solid var(--border);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  border-radius: 16px;
+  transition: transform 0.2s, border-color 0.2s;
+  overflow: hidden;
 }
 
-.list li:hover {
+.card:hover {
   transform: translateY(-4px);
-  border-color: var(--accent);
+  border-color: rgba(169, 114, 179, 0.432);
+}
+
+.cardContent {
+  padding: 30px;
+  width: 100%;
 }
 
 .icon {
@@ -68,12 +86,12 @@
   display: block;
   font-family: var(--font-sans);
   font-size: 18px;
-  color: var(--text);
+  color: rgba(169, 114, 179, 0.432);
   margin-bottom: 8px;
 }
 
 .list p {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 14px;
   line-height: 1.6;
   color: var(--text-mid);
@@ -81,6 +99,13 @@
 }
 
 @media (max-width: 768px) {
-  .section { padding: 80px 20px; }
-  .list li { padding: 20px; flex-direction: column; gap: 12px; }
+  .section {
+    padding: 80px 20px;
+  }
+
+  .card {
+    padding: 20px;
+    flex-direction: column;
+    gap: 12px;
+  }
 }

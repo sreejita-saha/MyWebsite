@@ -6,7 +6,7 @@ const links = [
   { label: 'Work', link: '#projects' },
   { label: 'Experience', link: '#experience' },
   { label: 'Achievements', link: '#achievements' },
-  { label: 'Contact', link: '#contact' },
+  { label: 'Hello', link: '#contact' },
 ]
 
 export default function Nav() {

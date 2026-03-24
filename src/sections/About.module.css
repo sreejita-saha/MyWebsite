@@ -13,37 +13,21 @@
   overflow: hidden;
 }
 
-.about::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("/ocean5.gif");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.15;
-
-  z-index: -1;
-  pointer-events: none;
-
+.videoBg {
   /* Adds a premium fade at the top and bottom so it blends seamlessly without hard cutoffs */
   -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
   mask-image: linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
 }
 
-.about::after {
+.videoBg::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
-
   width: 100%;
   height: 100%;
-
   background: rgba(1, 12, 63, 0.2);
-  z-index: -1;
+  z-index: 1;
 }
 
 .inner {
@@ -110,8 +94,7 @@
 }
 
 .skillsCard {
-  background: rgba(20, 20, 25, 0.1);
-  backdrop-filter: blur(10px); 
+  background: rgba(30, 30, 35, 0.85);
   border: 1px solid var(--border);
   border-radius: 40px;
   padding: 32px;

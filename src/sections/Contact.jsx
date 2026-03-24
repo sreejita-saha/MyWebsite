@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import VideoBackground from '../components/VideoBackground.jsx'
 import StarBorder from '../components/StarBorder.jsx'
 import styles from './Contact.module.css'
 
@@ -11,6 +12,7 @@ const links = [
 export default function Contact() {
   return (
     <section className={styles.section} id="contact">
+      <VideoBackground src="/ocean2.mp4" opacity={0.2} />
       <div className={styles.inner}>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -20,7 +22,7 @@ export default function Contact() {
         >
           <span className={styles.label}>Contact</span>
           <h2 className={styles.heading}>
-            Let's learn<br /><em>together.</em>
+            <br /><em>Hello :)</em>
           </h2>
         </motion.div>
 
@@ -48,29 +50,21 @@ export default function Contact() {
             </motion.a>
           ))}
         </motion.div>
-
-
-        <motion.div
-          className={styles.credits}
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
-          <footer className={styles.footer}></footer>
-          <p>
-            Built by Sreejita with <strong>Antigravity</strong> & <strong>Claude</strong>.<br/>
-            UI interactions via <strong>ReactBits</strong>.
-          </p>
-          <p className={styles.lamboCredit}>
-            <strong>Lambo Model:</strong> <a href="https://skfb.ly/oGR6N" target="_blank" rel="noreferrer">"Wallpaper 7680x2160 - Lamborghini Aventador SVJ"</a> by SDC PERFORMANCE™️ is licensed under <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noreferrer">Creative Commons Attribution</a>.
-          </p>
-        </motion.div>
       </div>
 
       <footer className={styles.footer}>
-        <span className={styles.footerName}>Sreejita Saha</span>
-        <span className={styles.footerCopy}>© 2026 · Built with React</span>
+        <div className={styles.footerLeft}>
+          <span className={styles.footerName}>Sreejita Saha</span>
+          <span className={styles.footerCopy}>© 2026 · Built with React</span>
+        </div>
+        <div className={styles.footerRight}>
+          <span className={styles.discreetCredits}>
+            Built with <strong>Antigravity</strong> & <strong>Claude</strong> · UI by <strong>ReactBits</strong>
+          </span>
+          <span className={styles.lamboCredit}>
+            Lambo Model by <a href="https://skfb.ly/oGR6N" target="_blank" rel="noreferrer">SDC PERFORMANCE™️</a>
+          </span>
+        </div>
       </footer>
     </section>
   )

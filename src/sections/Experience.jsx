@@ -20,9 +20,7 @@ const education = [
     role: 'BSc/MSc Immersive Software Engineering',
     date: '2024 – present',
     bullets: [
-      '589/625 Leaving Certificate — Physics, Chemistry, Biology (H1); Maths, Applied Maths, English (H2).',
       'Transact Campus Scholarship recipient.',
-      'Chemistry Olympiad competitor.',
     ],
   },
 ]

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import BorderGlow from '../components/BorderGlow.jsx'
 import styles from './Projects.module.css'
 
 const projects = [
@@ -43,7 +44,14 @@ const projects = [
 
 function ProjectCard({ id, tag, title, desc, langs, badge, featured }) {
   return (
-    <div className={styles.glowWrapper}>
+    <BorderGlow
+      borderRadius={17}
+      glowRadius={50}
+      glowIntensity={0.6}
+      colors={['#ff007f', '#a78bfa', '#00f0ff']}
+      backgroundColor="var(--surface)"
+      className={styles.projectGlow}
+    >
       <div className={`${styles.card} ${featured ? styles.featured : ''}`}>
         <div className={styles.cardTop}>
           <span className={styles.cardId}>{id}</span>
@@ -55,15 +63,13 @@ function ProjectCard({ id, tag, title, desc, langs, badge, featured }) {
         {/* Expanded description area for future immense details */}
         <div className={styles.detailsArea}>
           <p className={styles.cardDesc}>{desc}</p>
-          <p className={styles.cardDesc}>
-          </p>
         </div>
         
         <div className={styles.langs}>
           {langs.map(l => <span key={l} className={styles.lang}>{l}</span>)}
         </div>
       </div>
-    </div>
+    </BorderGlow>
   )
 }
 

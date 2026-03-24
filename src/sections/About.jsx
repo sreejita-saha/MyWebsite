@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import VideoBackground from '../components/VideoBackground.jsx'
 import GlassSurface from '../components/GlassSurface.jsx'
 import styles from './About.module.css'
 
@@ -11,6 +12,7 @@ const skills = {
 export default function About() {
   return (
     <section className={styles.about} id="about">
+      <VideoBackground src="ocean5.mp4" opacity={0.15} className={styles.videoBg} />
       <div className={styles.inner}>
         <motion.div
           className={styles.header}

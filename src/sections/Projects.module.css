@@ -80,8 +80,7 @@
   height: 65px;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(12, 12, 14, 0.6);
-  backdrop-filter: blur(10px);
+  background: rgba(20, 20, 22, 0.9);
   color: var(--text);
   cursor: url('/pointer.png'), pointer;
   transition: all 0.3s ease;
@@ -101,60 +100,17 @@
   flex-direction: column;
   align-items: center;
   height: 70vh;
-  /* Lock vertical height identically so text sizes never warp layout */
 }
 
 .detailsArea {
   margin-bottom: 24px;
   flex-grow: 1;
-  /* Pushes the 'langs' completely to the bottom of the card dynamically */
   min-height: 150px;
-  /* guarantees minimum footprint for massive content additions later */
 }
 
-.glowWrapper {
-  position: relative;
+.projectGlow {
   width: 100%;
-  height: 100%;
-  /* Force child Glass components to stretch */
-  display: flex;
-  flex-direction: column;
-  padding: 1px;
-  border-radius: 17px;
-  background: linear-gradient(20deg, #ff007f, #a78bfa, #00f0ff, #f472b6, #ff007f);
-  background-size: 400% 400%;
-  animation: glowAnimation 10s ease infinite;
-}
-
-/* Background halo bleed effect */
-.glowWrapper::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 5px;
-  background: linear-gradient(45deg, #ff007f, #a78bfa, #00f0ff, #f472b6, #ff007f);
-  background-size: 400% 400%;
-  animation: glowAnimation 10s ease infinite;
-  filter: blur(15px);
-  z-index: -1;
-  opacity: 0.3;
-}
-
-@keyframes glowAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+  flex-grow: 1;
 }
 
 .counterTracker {
@@ -191,9 +147,9 @@
 
 /* Card styles — GlassSurface will overlay its own glass effect on top */
 .card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  background: transparent;
+  border: none;
+  border-radius: 17px;
   padding: 28px;
   height: 100%;
   transition: border-color 0.2s;

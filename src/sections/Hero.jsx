@@ -35,8 +35,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
         >
-          Second-year <strong style={{ color: '#fadcf3' }}>[Immersive Software Engineering]</strong> student at University of Limerick. I build things
-          from Linux kernel drivers to production Document Uploader desktop apps.
+          Second-year <strong style={{ color: '#fadcf3' }}>[Immersive Software Engineering]</strong> student at University of Limerick.
+          I have built systems ranging from low-level Linux work to production-ready desktop applications.
         </motion.p>
 
         <motion.div
